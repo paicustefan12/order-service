@@ -1,6 +1,6 @@
 using System;
 
-namespace EquipmentService
+namespace OrderService
 {
     public class WeatherForecast
     {

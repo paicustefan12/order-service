@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace OrderService.BLL.Models
 {
-    public class MoveEquipmentModel
+    public class SuccessOrderModel
     {
-        public int EquipmentId { get;set;}
-        public int DepartmentId { get;set;} 
-        public int Quantity { get;set;}
+        public int EquipmentId { get; set; }
+        public int Quantity { get; set; }
     }
 }

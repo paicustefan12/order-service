@@ -1,4 +1,4 @@
-﻿using EquipmentService.DAL.Entities;
+﻿using OrderService.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
@@ -8,7 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EquipmentService.DAL
+namespace OrderService.DAL
 {
     public class AppDbContext : DbContext
     {

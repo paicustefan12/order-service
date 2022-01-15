@@ -1,12 +1,12 @@
-﻿using EquipmentService.BLL.Interfaces;
-using EquipmentService.BLL.Models;
-using EquipmentService.DAL.Entities;
+﻿using OrderService.BLL.Interfaces;
+using OrderService.BLL.Models;
+using OrderService.DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace EquipmentService.Controllers
+namespace OrderService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -51,7 +51,7 @@ namespace EquipmentService.Controllers
         public async Task<IActionResult> SuccessAsync([FromRoute] int id)
         {
             var response = await orderManager.SuccessOrder(id);
-            return response == true ? Ok() : BadRequest();
+            return Ok();
         }
 
         [HttpPost("fail/{id}")]

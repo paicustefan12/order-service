@@ -1,12 +1,12 @@
-﻿using EquipmentService.BLL.Models;
-using EquipmentService.DAL.Entities;
+﻿using OrderService.BLL.Models;
+using OrderService.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EquipmentService.BLL.Interfaces
+namespace OrderService.BLL.Interfaces
 {
     public interface IOrderManager
     {
@@ -14,7 +14,7 @@ namespace EquipmentService.BLL.Interfaces
         Task UpdateOrder(Order order);
         Task DeleteOrder(int id);
         Task<bool> CancelOrder(int id);
-        Task<bool> SuccessOrder(int id);
+        Task<Order> SuccessOrder(int id);
         Task<bool> FailOrder(int id);
 
     }

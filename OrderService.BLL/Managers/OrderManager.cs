@@ -1,14 +1,14 @@
-﻿using EquipmentService.BLL.Interfaces;
-using EquipmentService.BLL.Models;
-using EquipmentService.DAL.Entities;
-using EquipmentService.DAL.Interfaces;
+﻿using OrderService.BLL.Interfaces;
+using OrderService.BLL.Models;
+using OrderService.DAL.Entities;
+using OrderService.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EquipmentService.BLL.Managers
+namespace OrderService.BLL.Managers
 {
     public class OrderManager : IOrderManager
     {
@@ -45,22 +45,18 @@ namespace EquipmentService.BLL.Managers
             return true;
         }
 
-        public async Task<bool> SuccessOrder(int id)
+        public async Task<Order> SuccessOrder(int id)
         {
             var entity = await repository.Get(id);
             if (entity == null)
-                return false;
+                return null;
             entity.Status = "Success";
             await repository.Update(entity);
-            if (entity.OrderType == "Order")
+            if (entity.OrderType == "Return")
             {
-                // send to equipment service to update quantity with +
+                entity.Quantity *= -1;
             }
-            else if (entity.OrderType == "Return")
-            {
-                // send to equipment service to update quantity with -
-            }
-            return true;
+            return entity;
         }
         public async Task<bool> FailOrder(int id)
         {

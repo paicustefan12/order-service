@@ -1,5 +1,5 @@
-﻿using EquipmentService.DAL.Entities;
-using EquipmentService.DAL.Interfaces;
+﻿using OrderService.DAL.Entities;
+using OrderService.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EquipmentService.DAL.Repositories
+namespace OrderService.DAL.Repositories
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {

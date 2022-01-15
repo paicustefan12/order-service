@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EquipmentService.DAL.Entities
+namespace OrderService.DAL.Entities
 {
     public class BaseEntity
     {
