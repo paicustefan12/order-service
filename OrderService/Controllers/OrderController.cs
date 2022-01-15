@@ -1,6 +1,7 @@
 ﻿using EquipmentService.BLL.Interfaces;
 using EquipmentService.BLL.Models;
 using EquipmentService.DAL.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -54,6 +55,7 @@ namespace EquipmentService.Controllers
         }
 
         [HttpPost("fail/{id}")]
+        [Authorize("Manager")]
         public async Task<IActionResult> FailAsync([FromRoute] int id)
         {
             var response = await orderManager.FailOrder(id);
