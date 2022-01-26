@@ -95,7 +95,7 @@ namespace OrderService
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cur =>
                 {
                     cur.UseHealthCheck(provider);
-                    cur.Host(new Uri("rabbitmq://localhost"), h =>
+                    cur.Host(new Uri("amqps://host.docker.internal:5672"), h =>
                     {
                         h.Username("guest");
                         h.Password("guest");
