@@ -26,7 +26,11 @@ namespace OrderService.BLL.Managers
 
         public async Task UpdateOrder(Order order)
         {
-            await repository.Update(order);
+            var entity = await repository.Get(order.Id);
+            entity.EquipmentId = order.EquipmentId;
+            entity.Status = order.Status;
+            entity.Quantity = order.Quantity;
+            await repository.Update(entity);
         }
 
         public async Task DeleteOrder(int id)

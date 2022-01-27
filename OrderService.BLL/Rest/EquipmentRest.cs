@@ -21,7 +21,7 @@ namespace OrderService.BLL.Rest
             {
                 var myContent = JsonConvert.SerializeObject(successOrderModel);
                 var content = new StringContent(myContent, Encoding.UTF8, "application/json");
-                var result = await client.PostAsync("https://localhost:5001/api/equipment/update-stock", content);
+                var result = await client.PostAsync("https://api_master:80/api/equipment/update-stock", content);
                 return result.IsSuccessStatusCode;
             }
         }
